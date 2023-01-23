@@ -9,6 +9,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="only screen and (max-width: 768px)" href="style-mobile.css">
 </head>
 <body>
 
@@ -36,6 +37,7 @@
                     <label></label>
                 </div>
                 <button>Sign Up</button>
+                <a href="#" id="toggleLogin" class="page-anchor">Already have an account?</a>
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -57,6 +59,7 @@
                     <label></label>
                 </div>
                 <a href="#" class="forgot">Forgot your password?</a>
+                <a href="#" id="toggleCreateAccount" class="page-anchor">Don't have an account?</a>
                 <button>Sign In</button>
             </form>
         </div>
@@ -91,6 +94,12 @@
                 window.requestAnimationFrame( ()=>{
                 overlayBtn.classList.add('btnScaled');
             });
+        });
+        document.getElementById("toggleCreateAccount").addEventListener("click",function(){
+            container.classList.toggle('right-panel-active');            
+        });
+        document.getElementById("toggleLogin").addEventListener("click",function(){
+            container.classList.toggle('right-panel-active');            
         });
     </script>
 </body>
