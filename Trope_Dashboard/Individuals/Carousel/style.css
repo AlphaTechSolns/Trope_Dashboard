@@ -1,3 +1,6 @@
+html{
+    background: linear-gradient(to right,#4D77A5, #70578f);
+}
 .gallery{
     display: flex;
     height:20rem;

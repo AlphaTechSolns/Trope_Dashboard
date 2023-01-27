@@ -1,6 +1,8 @@
+html{
+    background: linear-gradient(to right,#4D77A5, #70578f);
+}
 body{
 	margin: 0;
-	background: #282d34;
 	color: white;
 	font-family: sans-serif;;
 	display: flex;
