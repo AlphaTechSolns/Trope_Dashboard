@@ -67,6 +67,15 @@ h1{
     margin: 0px 5px;
     height: 40px;
     width:40px;
+    transition: transform 0.5s;
+}
+.social-container a:hover{
+    border: 1px solid #0bbaf5;
+    transform: translateY(-5px);
+    
+}
+.social:hover{
+    color:#0bbaf5;  
 }
 
 span{
@@ -76,7 +85,8 @@ span{
 .infield{
     position: relative;
     margin: 8px 0px;
-    width:100%
+    width:100%;
+   
 }
 
 input{
@@ -85,6 +95,7 @@ input{
     background-color: #f3f3f3;
     border: none;
     outline: none;
+    border-radius: 5px;
 }
 
 label{

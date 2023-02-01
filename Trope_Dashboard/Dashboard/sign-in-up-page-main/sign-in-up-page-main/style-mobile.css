@@ -1,0 +1,30 @@
+.overlay-container{
+    display: none;
+}
+.form-container{
+    width:100%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+.container{
+    width: 90vw;
+    height: 80vh;
+}
+.right-panel-active .sign-up-container{
+    transform: translateX(0);
+}
+.form-container .page-anchor{
+    display: block;    
+}
+.sign-in-container .page-anchor{
+    display: block;    
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+form{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.infield {
+    max-width: 70vw;
+}
