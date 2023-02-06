@@ -3,20 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Calligraffitti&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Calligraffitti&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Dashboard</title>
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/charts/loader.js"
-    ></script>
+    <script type="text/javascript"src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", { packages: ["corechart"] });
       google.charts.setOnLoadCallback(drawChart);
@@ -25,9 +16,9 @@
         var data = google.visualization.arrayToDataTable([
           ["Task", "Hours per Day"],
           ["Work", 11],
-          ["Eat", 2],
+          ["Eat", 5],
           ["Commute", 2],
-          ["Watch TV", 2],
+          ["Watch TV", 3],
           ["Sleep", 7],
         ]);
 
@@ -48,16 +39,15 @@
       <a href="#" class="brand"> Trope</a>
       <ul class="side-menu">
         <li>
-          <a href="#" class="active"
-            ><i class="bx bxs-dashboard icon"></i> Dashboard</a
-          >
+          <a href="#" class="active">
+            <i class="bx bxs-dashboard icon"></i> 
+            Dashboard
+          </a>
         </li>
         <li class="divider" data-text="main">Main</li>
         <li>
-          <a href="#"
-            ><i class="bx bxs-inbox icon"></i> Pages
-            <i class="bx bx-chevron-right icon-right"></i
-          ></a>
+          <a href="#"><i class="bx bxs-inbox icon"></i> Pages
+            <i class="bx bx-chevron-right icon-right"></i></a>
           <ul class="side-dropdown">
             <li>
               <a href="../sign-in-up-page-main/sign-in-up-page-main/">Login</a>
@@ -146,13 +136,23 @@
           <div class="content-data">
             <div class="head">
               <h3>Carousels</h3>
-			  <div class="gallery">
-				<div style="background-image: url('../dashboard/images/img1.jpg');"></div>
-				<div style="background-image: url('../dashboard/images/img1.jpg');"></div>
-				<div style="background-image: url('../dashboard/images/img1.jpg');"></div>
-				<div style="background-image: url('../dashboard/images/img1.jpg');"></div>
-				<div style="background-image: url('../dashboard/images/img1.jpg');"></div>
-			  </div>
+              <div class="gallery">
+                <div
+                  style="background-image: url('../dashboard/images/img1.jpg')"
+                ></div>
+                <div
+                  style="background-image: url('../dashboard/images/img1.jpg')"
+                ></div>
+                <div
+                  style="background-image: url('../dashboard/images/img1.jpg')"
+                ></div>
+                <div
+                  style="background-image: url('../dashboard/images/img1.jpg')"
+                ></div>
+                <div
+                  style="background-image: url('../dashboard/images/img1.jpg')"
+                ></div>
+              </div>
               <div class="menu">
                 <i class="bx bx-dots-horizontal-rounded icon"></i>
                 <ul class="menu-link">
@@ -192,7 +192,7 @@
           <div class="content-data">
             <div class="head">
               <h3>Charts</h3>
-			  <div id="piechart" style="width: 900px; height: 500px;"></div>
+              <div id="piechart" style="width: 900px; height: 500px"></div>
               <div class="menu">
                 <i class="bx bx-dots-horizontal-rounded icon"></i>
                 <ul class="menu-link">
