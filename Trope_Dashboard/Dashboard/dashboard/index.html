@@ -6,6 +6,9 @@
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Calligraffitti&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script type="javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
     <title>Dashboard</title>
     <script type="text/javascript"src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -166,6 +169,24 @@
           <div class="content-data">
             <div class="head">
               <h3>Tables</h3>
+              <table id="table_id" class="display">
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1 Data 1</td>
+                        <td>Row 1 Data 2</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2 Data 1</td>
+                        <td>Row 2 Data 2</td>
+                    </tr>
+                </tbody>
+            </table>
               <div class="menu">
                 <i class="bx bx-dots-horizontal-rounded icon"></i>
                 <ul class="menu-link">
@@ -208,5 +229,10 @@
     </section>
 
     <script src="js/script.js"></script>
+    <script>
+    $(document).ready( function () {
+      $('#myTable').DataTable();
+  } );
+  </script>
   </body>
 </html>
