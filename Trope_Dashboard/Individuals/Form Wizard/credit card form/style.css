@@ -2,7 +2,8 @@
 
 *{
     font-family: 'Poppins', sans-serif;
-    margin:0; padding:0;
+    margin:0; 
+    padding:0;
     box-sizing: border-box;
     outline: none; border: none;
     text-decoration: none;
@@ -24,7 +25,7 @@
     border-radius: 5px;
     box-shadow: 0 10px 15px rgba(0,0,0,.1);
     padding: 20px;
-    width: 600px;
+    width: 500px;
     padding-top: 160px;
 }
 
@@ -57,13 +58,13 @@
 }
 
 .container form .submit-btn{
-    width: 100%;
+    width: 50%;
     background:linear-gradient(248.61deg, #01c2ff 0.03%, #2d0067 99.03%);
-    margin-top: 20px;
+    margin-top: 18px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 18px;
     color:#fff;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     transition: .2s linear;
 }
@@ -74,17 +75,18 @@
 }
 
 .container .card-container{
-    margin-bottom: -150px;
+    margin-bottom: -170px;
     position: relative;
-    height: 250px;
-    width: 400px;
+    height: 235px;
+    width: 350px;
 }
 
 .container .card-container .front{
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 0; left: 0;
+    top: 0; 
+    left: 0;
     background:linear-gradient(248.61deg, #01c2ff 0.03%, #2d0067 99.03%);
     border-radius: 5px;
     backface-visibility: hidden;
