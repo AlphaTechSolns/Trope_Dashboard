@@ -5,7 +5,7 @@ body{
   .card{
     width:100vw;
     height:100vh;
-    background: linear-gradient(to bottom right,#2A99BD,#4D77A5, #70578f 80%);
+    background:#eeecec;
   }
   .img img{
     width:280px;
