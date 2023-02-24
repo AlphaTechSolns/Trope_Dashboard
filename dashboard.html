@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/form-validation.css" />
     <title>Dashboard</title>
   </head>
-  <body>
-    <section id="sidebar">
+  <body class="dashboard dark">
+    <section id="sidebar" class="sidebar">
       <a href="#" class="brand"> Trope</a>
       <ul class="side-menu">
         <li>
@@ -71,7 +71,7 @@
       </div>
     </section>
 
-    <section id="content">
+    <section class="content">
       <nav>
         <i class="bx bx-menu toggle-sidebar"></i>
         <form action="#">
@@ -115,9 +115,8 @@
         </ul>
         <div class="data">
           <div class="content-data">
+            <h3>Carousels</h3>
             <div class="head">
-              <h3>Carousels</h3>
-              <br/>
               <div class="gallery">
                 <div
                   style="background-image: url('images/dashboard-img1.jpg')"
@@ -135,20 +134,12 @@
                   style="background-image: url('images/dashboard-img1.jpg')"
                 ></div>
               </div>
-              <div class="menu">
-                <i class="bx bx-dots-horizontal-rounded icon"></i>
-                <ul class="menu-link">
-                  <li><a href="#">Edit</a></li>
-                  <li><a href="#">Save</a></li>
-                  <li><a href="#">Remove</a></li>
-                </ul>
-              </div>
             </div>
           </div>
           <div class="content-data">
+            <h3>Tables</h3>
             <div class="head">
-              <h3>Tables</h3>
-              <table id="example" class="display" cellspacing="0" width="100%">
+              <table id="example" class="display dash-table" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -190,20 +181,17 @@
                     </tr>
                 </tbody>
             </table>
-        <!-- partial -->
-              <div class="menu">
-                <i class="bx bx-dots-horizontal-rounded icon"></i>
-                <ul class="menu-link">
-                  <li><a href="#">Edit</a></li>
-                  <li><a href="#">Save</a></li>
-                  <li><a href="#">Remove</a></li>
-                </ul>
-              </div>
             </div>
           </div>
           <div class="content-data">
+            <h3>Charts</h3>
             <div class="head">
-              <h3>Forms</h3>
+              <div id="piechart" class="dash-chart" style="width: 100%; height: 600px"></div>
+            </div>
+          </div>
+          <div class="content-data">
+            <h3>Forms</h3>
+            <div class="head">
               <form id="form" class="form">
                 <div class="form-control">
                     <label for="firstname">Firstname</label>
@@ -249,28 +237,6 @@
                 </div>
                 <button>Submit</button>
             </form>
-              <div class="menu">
-                <i class="bx bx-dots-horizontal-rounded icon"></i>
-                <ul class="menu-link">
-                  <li><a href="#">Edit</a></li>
-                  <li><a href="#">Save</a></li>
-                  <li><a href="#">Remove</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="content-data">
-            <div class="head">
-              <h3>Charts</h3>
-              <div id="piechart" style="width: 900px; height: 500px"></div>
-              <div class="menu">
-                <i class="bx bx-dots-horizontal-rounded icon"></i>
-                <ul class="menu-link">
-                  <li><a href="#">Edit</a></li>
-                  <li><a href="#">Save</a></li>
-                  <li><a href="#">Remove</a></li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -286,8 +252,16 @@
     <script type="text/javascript">
       google.charts.load("current", { packages: ["corechart"] });
       google.charts.setOnLoadCallback(drawChart);
+      function toggleDarkTheme(){
+        $("body").toggleClass("dark");
+          $(".dash-chart").empty();
+          drawChart();        
+      }
 
       function drawChart() {
+        var isDarkMode=$("body").hasClass("dark");
+        var textColor=isDarkMode?"#FFFFFF":"#000000";
+        var bgColor=isDarkMode?"#000000":"#FFFFFF";
         var data = google.visualization.arrayToDataTable([
           ["Task", "Hours per Day"],
           ["Work", 11],
@@ -299,6 +273,9 @@
 
         var options = {
           title: "My Daily Activities",
+          backgroundColor: bgColor,
+          legendTextStyle: { color: textColor },
+        titleTextStyle: { color: textColor },
         };
 
         var chart = new google.visualization.PieChart(

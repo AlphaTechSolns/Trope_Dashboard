@@ -7,13 +7,17 @@
 	background-color: #f7f7f7;
 	padding: 15px 35px;
 }
+.dark .header{
+	background-color: black;
+}
 
 .header h2 {
 	margin: 0;
 }
 
 .form {
-	padding: 20px 30px;	
+	padding: 20px 10px;	
+	width: 100%;
 }
 
 .form-control {

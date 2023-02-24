@@ -28,6 +28,10 @@ body {
 	background: var(--grey);
 	overflow-x: hidden;
 }
+body.dark{
+	background: rgb(25, 25, 25);;
+	color: var(--light);
+}
 
 a {
 	text-decoration: none;
@@ -44,7 +48,7 @@ li {
 
 
 
-#sidebar {
+.sidebar {
 	position: fixed;
 	max-width: 260px;
 	width: 100%;
@@ -57,16 +61,19 @@ li {
 	transition: all .3s ease;
 	z-index: 200;
 }
-#sidebar.hide {
+.dark>.sidebar{
+	background: var(--dark);
+}
+.sidebar.hide {
 	max-width: 60px;
 }
-#sidebar.hide:hover {
+.sidebar.hide:hover {
 	max-width: 260px;
 }
-#sidebar::-webkit-scrollbar {
+.sidebar::-webkit-scrollbar {
 	display: none;
 }
-#sidebar .brand {
+.sidebar .brand {
 	font-size: 25px;
 	display: flex;
 	align-items: center;
@@ -82,51 +89,59 @@ li {
 	transition: all .3s ease;
 	padding: 0 6px;
 }
+.dark .sidebar .brand{
+	background: #000;
+	color: var(--light);
+}
+.dark .sidebar.brand{
+	background: var(--dark);
+}
 
-#sidebar .icon {
+.sidebar .icon {
 	min-width: 48px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-right: 6px;
 }
-#sidebar .icon-right {
+.sidebar .icon-right {
 	transition: all .3s ease;
 }
-#sidebar .side-menu {
+.sidebar .side-menu {
 	margin: 36px 0;
 	padding: 0 20px;
 	transition: all .3s ease;
 }
-#sidebar.hide .side-menu {
+.sidebar.hide .side-menu {
 	padding: 0 6px;
 }
-#sidebar.hide:hover .side-menu {
+.sidebar.hide:hover .side-menu {
 	padding: 0 20px;
 }
-#sidebar .side-menu a {
+.sidebar .side-menu a {
 	display: flex;
 	align-items: center;
 	font-size: 14px;
-	color: var(--dark);
+	color: inherit;
 	padding: 12px 16px 12px 0;
 	transition: all .3s ease;
 	border-radius: 10px;
 	margin: 4px 0;
 	white-space: nowrap;
 }
-#sidebar .side-menu > li > a:hover {
+.sidebar .side-menu > li > a:hover {
 	background: var(--grey);
+	color: var(--dark);
 }
-#sidebar .side-menu > li > a.active .icon-right {
+.sidebar .side-menu > li > a.active .icon-right {
 	transform: rotateZ(90deg);
 }
-#sidebar .side-menu > li > a.active,
-#sidebar .side-menu > li > a.active:hover {
+.sidebar .side-menu > li > a.active,
+.sidebar .side-menu > li > a.active:hover {
 	background: var(--blue);
 	color: var(--light);
 }
-#sidebar .divider {
+.sidebar .divider {
 	margin-top: 24px;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -135,41 +150,44 @@ li {
 	transition: all .3s ease;
 	white-space: nowrap;
 }
-#sidebar.hide:hover .divider {
+.sidebar.hide:hover .divider {
 	text-align: left;
 }
-#sidebar.hide .divider {
+.sidebar.hide .divider {
 	text-align: center;
 }
-#sidebar .side-dropdown {
+.sidebar .side-dropdown {
 	padding-left: 54px;
 	max-height: 0;
 	overflow-y: hidden;
 	transition: all .15s ease;
 }
-#sidebar .side-dropdown.show {
+.sidebar .side-dropdown.show {
 	max-height: 1000px;
 }
-#sidebar .side-dropdown a:hover {
+.sidebar .side-dropdown a:hover {
 	color: var(--blue);
 }
-#sidebar .help{
+.sidebar .help{
 	width: 90%;
   height:100px;
 	padding: 15px;
 }
-#sidebar.hide .help {
+.sidebar.hide .help {
 	display: none;
 }
-#sidebar.hide:hover .help {
+.sidebar.hide:hover .help {
 	display: block;
 }
-#sidebar .help .wrapper {
+.sidebar .help .wrapper {
 	background: var(--grey);
 	padding: 15px;
 	border-radius: 10px;
 }
-#sidebar .btn-upgrade {
+.dark .sidebar .help .wrapper {
+	background: rgb(25, 25, 25);
+}
+.sidebar .btn-upgrade {
 	font-size: 12px;
 	display: flex;
 	justify-content: center;
@@ -182,10 +200,10 @@ li {
 	font-weight: 500;
 	margin-bottom: 10px;
 }
-#sidebar .btn-upgrade:hover {
+.sidebar .btn-upgrade:hover {
 	background: var(--dark-blue);
 }
-#sidebar .help .wrapper p {
+.sidebar .help .wrapper p {
 	font-size: 12px;
 	color: var(--dark-grey);
 	text-align: center;
@@ -204,13 +222,16 @@ li {
   margin-right: auto;
 }
 
-#content {
+.content {
 	position: relative;
 	width: calc(100% - 260px);
 	left: 260px;
 	transition: all .3s ease;
 }
-#sidebar.hide + #content {
+.dark.content{
+	color: var(--light);
+}
+.sidebar.hide + .content {
 	width: calc(100% - 60px);
 	left: 60px;
 }
@@ -225,6 +246,9 @@ nav {
 	top: 0;
 	left: 0;
 	z-index: 100;
+}
+.dark nav{
+	background: #000;
 }
 nav .toggle-sidebar {
 	font-size: 18px;
@@ -247,9 +271,16 @@ nav .form-group input {
 	padding: 10px 36px 10px 16px;
 	transition: all .3s ease;
 }
+.dark nav .form-group input {
+	background: #212121;
+}
 nav .form-group input:focus {
 	box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
 }
+.dark nav .form-group input:focus {
+	box-shadow: 0 0 0 1px var(--grey), 0 0 0 4px var(--dark-grey);
+}
+
 nav .form-group .icon {
 	position: absolute;
 	top: 50%;
@@ -294,6 +325,10 @@ nav .profile .profile-link {
 	pointer-events: none;
 	transition: all .3s ease;
 }
+.dark nav .profile .profile-link {
+	background: rgb(25, 25, 25);
+	color: #FFF;
+}
 nav .profile .profile-link.show {
 	opacity: 1;
 	pointer-events: visible;
@@ -308,8 +343,15 @@ nav .profile .profile-link a {
 	align-items: center;
 	transition: all .3s ease;
 }
+.dark nav .profile .profile-link a {
+	color: white;
+}
+
 nav .profile .profile-link a:hover {
 	background: var(--grey);
+}
+nav .profile .profile-link a:hover {
+	color: #000;
 }
 
 main {
@@ -354,15 +396,19 @@ main .data .content-data {
 	border-radius: 10px;
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
 }
+.dark main .data .content-data{
+	background: var(--dark);
+}
 main .content-data .head {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 24px;
 }
-main .content-data .head h3 {
+main .content-data  h3 {
 	font-size: 20px;
 	font-weight: 600;
+	padding-bottom: 20px;
 }
 main .content-data .head .menu {
 	position: relative;
@@ -395,7 +441,9 @@ main .content-data .head .menu-link.show {
 
 .gallery{
     display: flex;
-    width: 900px; height: 500px;
+	min-width: 1200px;
+	max-width: 1200px;
+	height: 500px;
     gap: 1rem;
 }
 
@@ -419,7 +467,7 @@ main .content-data .head .menu-link.show {
 
 
 @media screen and (max-width: 768px) {
-	#content {
+	.content {
 		position: relative;
 		width: calc(100% - 60px);
 		transition: all .3s ease;
@@ -429,7 +477,7 @@ main .content-data .head .menu-link.show {
 		display: none;
 	}
 }
-#example {
+.dash-table {
     margin: 2rem;
   }
 
@@ -449,5 +497,21 @@ main .content-data .head .menu-link.show {
   .paginate_button {
     border-radius: 0 !important;
   }
+  .dark th {
+    background-color: rgba(25, 25, 25);
+  }
 
-  
+.dark .display .dataTable{
+	color: var(--light)
+}
+.dark input{
+    background: var(--dark);
+  }
+  .dark .form-control{
+	background:rgb(25, 25, 25);
+	color: #FFF;
+  }
+  .dark td:hover {
+    background-color: rgb(201, 201, 201);
+	color: black;
+  }
