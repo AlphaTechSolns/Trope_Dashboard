@@ -111,6 +111,11 @@ imgProfile.addEventListener('click', function () {
 
 
 
+function toggleDarkTheme(){
+	$("body").toggleClass("dark");
+	  $(".dash-chart").empty();
+	  loadCharts();
+  }
 
 
 

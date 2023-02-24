@@ -249,41 +249,8 @@
 
     <script type="text/javascript" src="js/dashboard-script.js"></script>
     <script type="text/javascript" src="js/form-validation.js"></script>
+    <script type="text/javascript" src="js/charts.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", { packages: ["corechart"] });
-      google.charts.setOnLoadCallback(drawChart);
-      function toggleDarkTheme(){
-        $("body").toggleClass("dark");
-          $(".dash-chart").empty();
-          drawChart();        
-      }
-
-      function drawChart() {
-        var isDarkMode=$("body").hasClass("dark");
-        var textColor=isDarkMode?"#FFFFFF":"#000000";
-        var bgColor=isDarkMode?"#000000":"#FFFFFF";
-        var data = google.visualization.arrayToDataTable([
-          ["Task", "Hours per Day"],
-          ["Work", 11],
-          ["Eat", 5],
-          ["Commute", 2],
-          ["Watch TV", 3],
-          ["Sleep", 7],
-        ]);
-
-        var options = {
-          title: "My Daily Activities",
-          backgroundColor: bgColor,
-          legendTextStyle: { color: textColor },
-        titleTextStyle: { color: textColor },
-        };
-
-        var chart = new google.visualization.PieChart(
-          document.getElementById("piechart")
-        );
-
-        chart.draw(data, options);
-      }
     </script>
      <script>
     $(document).ready( function () {

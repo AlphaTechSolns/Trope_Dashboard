@@ -1,9 +1,15 @@
 google.charts.load("current", { packages: ["corechart","bar"] });
-google.charts.setOnLoadCallback(drawPieChart);
-google.charts.setOnLoadCallback(drawBarChart);
-google.charts.setOnLoadCallback(draw3DPieChart);
-function drawPieChart() {
-  var data = google.visualization.arrayToDataTable([
+google.charts.setOnLoadCallback(loadCharts);
+function loadCharts(){
+  drawPieChart("piechart");
+  drawBarChart("barChart");
+  draw3DPieChart("piechart_3d");
+}
+function drawPieChart(elemID) {
+  var isDarkMode=$("body").hasClass("dark");
+  var textColor=isDarkMode?"#FFFFFF":"#000000";
+  var bgColor=isDarkMode?"#000000":"#FFFFFF";
+var data = google.visualization.arrayToDataTable([
     ["Task", "Hours per Day"],
     ["Work", 11],
     ["Eat", 5],
@@ -13,13 +19,20 @@ function drawPieChart() {
   ]);
   var options = {
     title: "My Daily Activities",
-  };
+    backgroundColor: bgColor,
+    legendTextStyle: { color: textColor },
+  titleTextStyle: { color: textColor },
+};
   var chart = new google.visualization.PieChart(
     document.getElementById("piechart")
   );
   chart.draw(data, options);
 }
-function drawBarChart() {
+function drawBarChart(elemID) {
+  var isDarkMode=$("body").hasClass("dark");
+  var textColor=isDarkMode?"#FFFFFF":"#000000";
+  var bgColor=isDarkMode?"#000000":"#FFFFFF";
+
     var data = google.visualization.arrayToDataTable([
         ['City', '2010 Population', '2000 Population'],
         ['New York City, NY', 8175000, 8008000],
@@ -30,7 +43,10 @@ function drawBarChart() {
       ]);
 
       var options = {
-        title: 'Population of Largest U.S. Cities',
+        backgroundColor: bgColor,
+        legendTextStyle: { color: textColor },
+      titleTextStyle: { color: textColor },
+      title: 'Population of Largest U.S. Cities',
         chartArea: {width: '50%'},
         colors: ['#b0120a', '#ffab91'],
         hAxis: {
@@ -44,8 +60,11 @@ function drawBarChart() {
       var chart = new google.visualization.BarChart(document.getElementById('barChart'));
       chart.draw(data, options);
 }
-function draw3DPieChart() {
-    var data = google.visualization.arrayToDataTable([
+function draw3DPieChart(elemID) {
+  var isDarkMode=$("body").hasClass("dark");
+  var textColor=isDarkMode?"#FFFFFF":"#000000";
+  var bgColor=isDarkMode?"#000000":"#FFFFFF";
+var data = google.visualization.arrayToDataTable([
         ['Task', 'Hours per Day'],
         ['Work',     11],
         ['Eat',      2],
@@ -57,8 +76,11 @@ function draw3DPieChart() {
       var options = {
         title: 'My Daily Activities',
         is3D: true,
-      };
+        backgroundColor: bgColor,
+        legendTextStyle: { color: textColor },
+      titleTextStyle: { color: textColor },
+   };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
       chart.draw(data, options);
-}
+}      
