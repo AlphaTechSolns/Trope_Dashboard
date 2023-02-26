@@ -10,31 +10,37 @@ function loadCharts(){
   drawCurvedLineChart("curve_line");
   drawMBarChart("mbar_chart");
 }
+function isElementPresent(elemID){
+  return document.getElementById(elemID)!=undefined;
+}
 function drawPieChart(elemID) {
-  var isDarkMode=$("body").hasClass("dark");
-  var textColor=isDarkMode?"#FFFFFF":"#000000";
-  var bgColor=isDarkMode?"#000000":"#FFFFFF";
-var data = google.visualization.arrayToDataTable([
-    ["Task", "Hours per Day"],
-    ["Work", 11],
-    ["Eat", 5],
-    ["Commute", 2],
-    ["Watch TV", 3],
-    ["Sleep", 7],
-  ]);
-  var options = {
-    title: "My Daily Activities",
-    backgroundColor: bgColor,
-    legendTextStyle: { color: textColor },
-  titleTextStyle: { color: textColor },
-};
-  var chart = new google.visualization.PieChart(
-    document.getElementById("piechart")
-  );
-  chart.draw(data, options);
+  if(isElementPresent(elemID)){
+    var isDarkMode=$("body").hasClass("dark");
+    var textColor=isDarkMode?"#FFFFFF":"#000000";
+    var bgColor=isDarkMode?"#000000":"#FFFFFF";
+  var data = google.visualization.arrayToDataTable([
+      ["Task", "Hours per Day"],
+      ["Work", 11],
+      ["Eat", 5],
+      ["Commute", 2],
+      ["Watch TV", 3],
+      ["Sleep", 7],
+    ]);
+    var options = {
+      title: "My Daily Activities",
+      backgroundColor: bgColor,
+      legendTextStyle: { color: textColor },
+    titleTextStyle: { color: textColor },
+  };
+    var chart = new google.visualization.PieChart(
+      document.getElementById("piechart")
+    );
+    chart.draw(data, options);  
+  }
 }
 function drawBarChart(elemID) {
-  var isDarkMode=$("body").hasClass("dark");
+  if(isElementPresent(elemID)){
+    var isDarkMode=$("body").hasClass("dark");
   var textColor=isDarkMode?"#FFFFFF":"#000000";
   var bgColor=isDarkMode?"#000000":"#FFFFFF";
 
@@ -64,9 +70,11 @@ function drawBarChart(elemID) {
       };
       var chart = new google.visualization.BarChart(document.getElementById('barChart'));
       chart.draw(data, options);
+    }
 }
 function draw3DPieChart(elemID) {
-  var isDarkMode=$("body").hasClass("dark");
+  if(isElementPresent(elemID)){
+    var isDarkMode=$("body").hasClass("dark");
   var textColor=isDarkMode?"#FFFFFF":"#000000";
   var bgColor=isDarkMode?"#000000":"#FFFFFF";
 var data = google.visualization.arrayToDataTable([
@@ -88,9 +96,11 @@ var data = google.visualization.arrayToDataTable([
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
       chart.draw(data, options);
+  }
 }      
 function drawDoughNutChart(elemID) {
-  var isDarkMode=$("body").hasClass("dark");
+  if(isElementPresent(elemID)){
+    var isDarkMode=$("body").hasClass("dark");
   var textColor=isDarkMode?"#FFFFFF":"#000000";
   var bgColor=isDarkMode?"#000000":"#FFFFFF";
   var data = google.visualization.arrayToDataTable([
@@ -112,8 +122,10 @@ function drawDoughNutChart(elemID) {
   var chart = new google.visualization.PieChart(document.getElementById(elemID));
   chart.draw(data, options);
 }
+}
 function drawSliceChart(elemID) {
-  var isDarkMode=$("body").hasClass("dark");
+  if(isElementPresent(elemID)){
+    var isDarkMode=$("body").hasClass("dark");
   var textColor=isDarkMode?"#FFFFFF":"#000000";
   var bgColor=isDarkMode?"#000000":"#FFFFFF";
   var data = google.visualization.arrayToDataTable([
@@ -142,9 +154,10 @@ function drawSliceChart(elemID) {
 
   var chart = new google.visualization.PieChart(document.getElementById(elemID));
   chart.draw(data, options);
-}
+  }}
 function drawWaterfallChart(elemID) {
-  var isDarkMode=$("body").hasClass("dark");
+  if(isElementPresent(elemID)){
+    var isDarkMode=$("body").hasClass("dark");
   var textColor=isDarkMode?"#FFFFFF":"#000000";
   var bgColor=isDarkMode?"#000000":"#FFFFFF";
   var data = google.visualization.arrayToDataTable([
@@ -169,9 +182,10 @@ function drawWaterfallChart(elemID) {
 
   var chart = new google.visualization.CandlestickChart(document.getElementById(elemID));
   chart.draw(data, options);
-}
+  }}
 function drawCurvedLineChart(elemID) {
-  var isDarkMode=$("body").hasClass("dark");
+  if(isElementPresent(elemID)){
+    var isDarkMode=$("body").hasClass("dark");
   var textColor=isDarkMode?"#FFFFFF":"#000000";
   var bgColor=isDarkMode?"#000000":"#FFFFFF";
   var data = google.visualization.arrayToDataTable([
@@ -194,8 +208,10 @@ function drawCurvedLineChart(elemID) {
 
   chart.draw(data, options);
 }
+}
 function drawMBarChart(elemID) {
-  var isDarkMode=$("body").hasClass("dark");
+  if(isElementPresent(elemID)){
+    var isDarkMode=$("body").hasClass("dark");
   var textColor=isDarkMode?"#FFFFFF":"#000000";
   var bgColor=isDarkMode?"#000000":"#FFFFFF";
 
@@ -220,4 +236,5 @@ function drawMBarChart(elemID) {
   var chart = new google.charts.Bar(document.getElementById(elemID));
 
   chart.draw(data, google.charts.Bar.convertOptions(options));
+}
 }
