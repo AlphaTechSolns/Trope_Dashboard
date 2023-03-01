@@ -480,7 +480,7 @@ main .content-data .head .menu-link.show {
     margin: 2rem;
   }
 
-  th {
+ /* th {
     background-color: white;
   }
   tr:nth-child(odd) {
@@ -492,7 +492,7 @@ main .content-data .head .menu-link.show {
   td:hover {
     background-color: lightblue;
   }
-
+*/
   .paginate_button {
     border-radius: 0 !important;
   }
