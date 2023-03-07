@@ -7,9 +7,9 @@ body{
 	align-items: center;
 	min-height: 100vh;
 }
-.slider{width: 100%}
-.slider input{display: none;}
-.testimonials{
+.carousal1.slider{width: 100%}
+.carousal1.slider input{display: none;}
+.carousal1.testimonials{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -18,7 +18,7 @@ body{
 	perspective: 300px;
 	overflow: hidden;
 }
-.testimonials .item{
+.carousal1.testimonials .item{
 	width: 260px;
 	padding: 30px;
 	border-radius: 5px;
@@ -33,16 +33,16 @@ body{
 	user-select: none;
 	cursor: pointer;
 }
-.testimonials .item h1{
+.carousal1.testimonials .item h1{
     font-size:74px; 
     color: white;
 }
-.dots{
+.carousal1.dots{
     display: flex; 
     justify-content: center;
     align-items: center;
 }
-.dots label{
+.carousal1.dots label{
 	height: 5px;
 	width: 5px;
 	border-radius: 50%;
@@ -51,69 +51,69 @@ body{
 	margin: 7px;
 	transition-duration: 0.2s;
 }
-#t-1:checked ~ .dots label[for="t-1"],
-#t-2:checked ~ .dots label[for="t-2"],
-#t-3:checked ~ .dots label[for="t-3"],
-#t-4:checked ~ .dots label[for="t-4"],
-#t-5:checked ~ .dots label[for="t-5"]{
+.carousal1 #t-1:checked ~ .dots label[for="t-1"],
+.carousal1 #t-2:checked ~ .dots label[for="t-2"],
+.carousal1 #t-3:checked ~ .dots label[for="t-3"],
+.carousal1 #t-4:checked ~ .dots label[for="t-4"],
+.carousal1 #t-5:checked ~ .dots label[for="t-5"]{
 	transform: scale(2);
 	background-color: #fff;
 	box-shadow: 0px 0px 0px 3px #dddddd24;
 }
 
-#t-1:checked ~ .dots label[for="t-2"],
-#t-2:checked ~ .dots label[for="t-1"],
-#t-2:checked ~ .dots label[for="t-3"],
-#t-3:checked ~ .dots label[for="t-2"],
-#t-3:checked ~ .dots label[for="t-4"],
-#t-4:checked ~ .dots label[for="t-3"],
-#t-4:checked ~ .dots label[for="t-5"],
-#t-5:checked ~ .dots label[for="t-4"]{
+.carousal1 #t-1:checked ~ .dots label[for="t-2"],
+.carousal1 #t-2:checked ~ .dots label[for="t-1"],
+.carousal1 #t-2:checked ~ .dots label[for="t-3"],
+.carousal1 #t-3:checked ~ .dots label[for="t-2"],
+.carousal1 #t-3:checked ~ .dots label[for="t-4"],
+.carousal1 #t-4:checked ~ .dots label[for="t-3"],
+.carousal1 #t-4:checked ~ .dots label[for="t-5"],
+.carousal1 #t-5:checked ~ .dots label[for="t-4"]{
 	transform: scale(1.5);
 }
 
-#t-1:checked ~ .testimonials label[for="t-3"],
-#t-2:checked ~ .testimonials label[for="t-4"],
-#t-3:checked ~ .testimonials label[for="t-5"],
-#t-4:checked ~ .testimonials label[for="t-1"],
-#t-5:checked ~ .testimonials label[for="t-2"]{
+.carousal1 #t-1:checked ~ .testimonials label[for="t-3"],
+.carousal1 #t-2:checked ~ .testimonials label[for="t-4"],
+.carousal1 #t-3:checked ~ .testimonials label[for="t-5"],
+.carousal1 #t-4:checked ~ .testimonials label[for="t-1"],
+.carousal1 #t-5:checked ~ .testimonials label[for="t-2"]{
 	transform: translate3d(600px, 0, -180px) rotateY(-25deg);
 	z-index: 2;
 }
 
-#t-1:checked ~ .testimonials label[for="t-2"],
-#t-2:checked ~ .testimonials label[for="t-3"],
-#t-3:checked ~ .testimonials label[for="t-4"],
-#t-4:checked ~ .testimonials label[for="t-5"],
-#t-5:checked ~ .testimonials label[for="t-1"]{
+.carousal1 #t-1:checked ~ .testimonials label[for="t-2"],
+.carousal1 #t-2:checked ~ .testimonials label[for="t-3"],
+.carousal1 #t-3:checked ~ .testimonials label[for="t-4"],
+.carousal1 #t-4:checked ~ .testimonials label[for="t-5"],
+.carousal1 #t-5:checked ~ .testimonials label[for="t-1"]{
 	transform: translate3d(300px, 0, -90px) rotateY(-15deg);
 	z-index: 3;
 }
 
-#t-2:checked ~ .testimonials label[for="t-1"],
-#t-3:checked ~ .testimonials label[for="t-2"],
-#t-4:checked ~ .testimonials label[for="t-3"],
-#t-5:checked ~ .testimonials label[for="t-4"],
-#t-1:checked ~ .testimonials label[for="t-5"]{
+.carousal1 #t-2:checked ~ .testimonials label[for="t-1"],
+.carousal1 #t-3:checked ~ .testimonials label[for="t-2"],
+.carousal1 #t-4:checked ~ .testimonials label[for="t-3"],
+.carousal1 #t-5:checked ~ .testimonials label[for="t-4"],
+.carousal1 #t-1:checked ~ .testimonials label[for="t-5"]{
 	transform: translate3d(-300px, 0, -90px) rotateY(15deg);
 	z-index: 3;
 }
 
-#t-3:checked ~ .testimonials label[for="t-1"],
-#t-4:checked ~ .testimonials label[for="t-2"],
-#t-5:checked ~ .testimonials label[for="t-3"],
-#t-2:checked ~ .testimonials label[for="t-5"],
-#t-1:checked ~ .testimonials label[for="t-4"]{
+.carousal1 #t-3:checked ~ .testimonials label[for="t-1"],
+.carousal1 #t-4:checked ~ .testimonials label[for="t-2"],
+.carousal1 #t-5:checked ~ .testimonials label[for="t-3"],
+.carousal1 #t-2:checked ~ .testimonials label[for="t-5"],
+.carousal1 #t-1:checked ~ .testimonials label[for="t-4"]{
 	transform: translate3d(-600px, 0, -180px) rotateY(25deg);
 	
 }
 
-#t-1:checked ~ .testimonials label[for="t-1"],
-#t-2:checked ~ .testimonials label[for="t-2"],
-#t-3:checked ~ .testimonials label[for="t-3"],
-#t-4:checked ~ .testimonials label[for="t-4"],
-#t-5:checked ~ .testimonials label[for="t-4"],
-#t-5:checked ~ .testimonials label[for="t-5"]{
+.carousal1 #t-1:checked ~ .testimonials label[for="t-1"],
+.carousal1 #t-2:checked ~ .testimonials label[for="t-2"],
+.carousal1 #t-3:checked ~ .testimonials label[for="t-3"],
+.carousal1 #t-4:checked ~ .testimonials label[for="t-4"],
+.carousal1 #t-5:checked ~ .testimonials label[for="t-4"],
+.carousal1 #t-5:checked ~ .testimonials label[for="t-5"]{
 	
 	z-index: 4;
 }
