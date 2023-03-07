@@ -1,6 +1,4 @@
-html{
-    background: linear-gradient(to right,#4D77A5, #70578f);
-}
+
 body{
 	margin: 0;
 	color: white;
@@ -16,12 +14,12 @@ body{
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	min-height: 350px;
-	perspective: 1000px;
+	min-height: 250px;
+	perspective: 300px;
 	overflow: hidden;
 }
 .testimonials .item{
-	width: 300px;
+	width: 260px;
 	padding: 30px;
 	border-radius: 5px;
 	background-color: #21262d;
@@ -36,7 +34,7 @@ body{
 	cursor: pointer;
 }
 .testimonials .item h1{
-    font-size: 114px; 
+    font-size:74px; 
     color: white;
 }
 .dots{
