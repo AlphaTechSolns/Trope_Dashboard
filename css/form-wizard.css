@@ -1,6 +1,7 @@
 body {
     margin: 0;
-  
+ 
+   background: no-repeat scroll;
   }
   .page-content {
     width: 100%;
@@ -132,7 +133,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  
     -webkit-transform: translate(-50%, -50%);
   }
   .form-register .steps li.current a .step-icon,
@@ -161,18 +161,21 @@ body {
   .form-register .content {
     background: #f7f7f7;
     border-radius: 5px;
-  
     -webkit-border-radius: 5px;
     padding: 32px 115px 23px 75px;
+    position: relative;
+    left:150px;
   }
   .form-register .content h2 {
     display: none;
   }
+  
   .inner .form-row {
     display: flex;
     margin: 0 -35px;
     position: relative;
   }
+  
   .inner .form-row.form-row-2 {
     width: 80.6%;
   }
@@ -219,7 +222,7 @@ body {
     -webkit-box-sizing: border-box;
   }
   .inner .form-row .form-holder input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(15, 15, 15, 0.6);
     font-size: 15px;
   }
   .inner .form-row .form-holder input:-ms-input-placeholder {
@@ -264,7 +267,7 @@ body {
   .inner h3 {
     font-size: 16px;
     font-weight: 600;
-    color: #fff;
+    color: #121212;
     margin: 0 0 11px;
   }
   .inner .form-row.table-responsive {
@@ -288,12 +291,12 @@ body {
     padding-bottom: 18px;
   }
   .inner .table-responsive tbody th {
-    color: #000;
+    color: #f5f1f1;
     font-size: 16px;
     font-weight: 400;
   }
   .inner .table-responsive tbody td {
-    color: #000;
+    color: #2d2b2b;
     font-size: 16px;
     font-weight: 400;
   }
