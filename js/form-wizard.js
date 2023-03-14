@@ -34,8 +34,8 @@ $(function(){
         titleTemplate : '<div class="title">#title#</div>',
         labels: {
             previous : 'Back',
-            next : '<i class="zmdi zmdi-arrow-right"></i>',
-            finish : '<i class="zmdi zmdi-arrow-right"></i>',
+            next : '<i class="bx bx-right-arrow-alt"></i>',
+            finish : '<i class="bx bx-right-arrow-alt"></i>',
             current : ''
         },
         onStepChanging: function (event, currentIndex, newIndex) { 
