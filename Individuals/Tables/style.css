@@ -1,20 +1,44 @@
-body {
-    margin: 2rem;
-  }
+table {
+  font-family: sans-serif;
+}
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>thead>tr>th {
+ text-align:center;
+  padding:1rem 3rem;
+  font-size: .8rem;
+}
 
-  th {
-    background-color: white;
-  }
-  tr:nth-child(odd) {
-    background-color: grey;
-  }
-  th, td {
-    padding: 0.5rem;
-  }
-  td:hover {
-    background-color: lightblue;
-  }
+.table > thead > tr > th:first-child {
+ background-color:unset;
+}
 
-  .paginate_button {
-    border-radius: 0 !important;
-  }
+.table > thead > tr > th {
+ border-radius: 6px 6px 0 0; 
+}
+
+.table > tbody > tr > th { 
+ border-radius: 6px 0 0px 6px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th  {
+ background-color:#9BD727;
+ color:white; 
+}
+
+.table > tbody > tr > td {
+  background-color:#DEF2CC;
+ color:black;
+}
+
+.table>tfoot>tr>td {
+ color: #9BD727;
+ font-size:1rem;
+}
+
+.fa-check {
+ color:#9BD727;
+}
